@@ -364,16 +364,19 @@ footer {
     width: 50px;
     border-radius: 50%;
     border: none;
-    background-color: var(--btnbg, #111);
-    color: var(--btnfontcolor, #fff);
-    font-size: 1.2rem;
+    background-color: var(--btnbg);
+    color: var(--btnfontcolor);
+    font-size: 1.8rem;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .btn:focus {
-    outline-style: none;
+    outline: none;
+    box-shadow: 0 0 0 3px #999;
 }
