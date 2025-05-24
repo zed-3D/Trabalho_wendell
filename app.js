@@ -1,27 +1,28 @@
-'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleBtn = document.querySelector('.btn');
+    const menuToggleBtn = document.querySelector('.menu-toggle');
+    const menuItems = document.querySelector('.menu-items');
+    const body = document.body;
 
-const switcher = document.querySelector('.btn');
+    // Define tema padrão
+    if (!body.classList.contains('light-theme') && !body.classList.contains('dark-theme')) {
+        body.classList.add('light-theme'); // tema inicial
+        themeToggleBtn.textContent = '🌙'; // ícone de lua
+    }
 
-// Ao carregar a página, aplica o tema salvo
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  document.body.classList.add(savedTheme);
-  switcher.textContent = savedTheme === 'dark-theme' ? 'Light Mode' : 'Dark Mode';
-} else {
-  // Se não houver tema salvo, aplica o tema claro como padrão
-  document.body.classList.add('light-theme');
-  switcher.textContent = 'Dark Mode';
-}
+    // Alternância de tema
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        body.classList.toggle('light-theme');
 
-// Alternar tema ao clicar
-switcher.addEventListener('click', function () {
-  const isDark = document.body.classList.contains('dark-theme');
+        const isDark = body.classList.contains('dark-theme');
+        themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+    });
 
-  document.body.classList.toggle('dark-theme', !isDark);
-  document.body.classList.toggle('light-theme', isDark);
-
-  const newTheme = isDark ? 'light-theme' : 'dark-theme';
-  localStorage.setItem('theme', newTheme);
-
-  this.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    // Menu mobile
+    if (menuToggleBtn) {
+        menuToggleBtn.addEventListener('click', () => {
+            menuItems.classList.toggle('active');
+        });
+    }
 });
