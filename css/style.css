@@ -381,3 +381,6 @@ footer {
     outline: none;
     box-shadow: 0 0 0 3px #999;
 }
+.navbar, .menu, .cards-noticias, .manchetes {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
