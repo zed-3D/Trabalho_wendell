@@ -4,23 +4,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuItems = document.querySelector('.menu-items');
     const body = document.body;
 
-    // Define tema padrão
-    if (!body.classList.contains('light-theme') && !body.classList.contains('dark-theme')) {
-        body.classList.add('light-theme'); // tema inicial
-        themeToggleBtn.textContent = '🌙'; // ícone de lua
+    // Função para aplicar tema
+    const applyTheme = (theme) => {
+        body.classList.remove('light-theme', 'dark-theme');
+        body.classList.add(theme);
+        themeToggleBtn.textContent = theme === 'dark-theme' ? '☀️' : '🌙';
+    };
+
+    // Carregar tema salvo
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark-theme' || savedTheme === 'light-theme') {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme('light-theme'); // padrão
     }
 
-    // Alternância de tema
+    // Alternância de tema com salvamento
     themeToggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-        body.classList.toggle('light-theme');
-
         const isDark = body.classList.contains('dark-theme');
-        themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+        const newTheme = isDark ? 'light-theme' : 'dark-theme';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     });
 
-    // Menu mobile
-    if (menuToggleBtn) {
+    // Alternância do menu mobile
+    if (menuToggleBtn && menuItems) {
         menuToggleBtn.addEventListener('click', () => {
             menuItems.classList.toggle('active');
         });
