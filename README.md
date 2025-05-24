@@ -74,4 +74,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 Para mais informações, entre em contato através da página de contato do site.
 
 ---
-Desenvolvido com ❤️ para O Curioso
+Desenvolvido para aula de desenvolvimento web. (Trabalho em grupo)
