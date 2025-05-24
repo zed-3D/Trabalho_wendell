@@ -327,23 +327,19 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
-} 
-}
-.list {
-    list-style: square;
-}
+
 .light-theme {
-    --bg: var(--green);
+    --bg: var(--white);
     --fontcolor: var(--black);
-    --btnfontcolor: var(--green);
+    --btnfontcolor: var(--white);
     --btnbg: var(--black);
   }
   
 .dark-theme {
     --bg: var(--black);
-    --fontcolor: var(--green);
-    --btnfontcolor: var(--white);
-    --btnbg: var(--green);
+    --fontcolor: var(--white);
+    --btnfontcolor: var(--black);
+    --btnbg: var(--white);
   }  
 
 :root{
