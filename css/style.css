@@ -1,4 +1,39 @@
-/* Reset e Estilos Gerais */
+:root {
+    --bg: #ffffff;
+    --green: #00ff00;
+    --white: #ffffff;
+    --black: #000000;
+    --fontcolor: #000000;
+    --btnfontcolor: #ffffff;
+    --btnbg: #000000;
+    --card-bg: #ffffff;
+    --highlight-bg: #f8f9fa;
+    --footer-bg: #333333;
+    --footer-color: #ffffff;
+}
+
+.light-theme {
+    --bg: var(--white);
+    --fontcolor: var(--black);
+    --btnfontcolor: var(--white);
+    --btnbg: var(--black);
+    --card-bg: #ffffff;
+    --highlight-bg: #f8f9fa;
+    --footer-bg: #333333;
+    --footer-color: #ffffff;
+}
+
+.dark-theme {
+    --bg: var(--black);
+    --fontcolor: var(--white);
+    --btnfontcolor: var(--black);
+    --btnbg: var(--white);
+    --card-bg: #1a1a1a;
+    --highlight-bg: #2a2a2a;
+    --footer-bg: #000000;
+    --footer-color: #cccccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +43,12 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: var(--bg);
     color: var(--fontcolor);
+    background-color: var(--bg);
 }
 
-/* Navbar */
 .navbar {
-    background-color: #fff;
+    background-color: var(--card-bg);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 1rem;
     position: fixed;
@@ -55,7 +88,7 @@ body {
 
 .jornal-nome {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--fontcolor);
 }
 
 .menu-items {
@@ -66,7 +99,7 @@ body {
 
 .menu-items a {
     text-decoration: none;
-    color: #333;
+    color: var(--fontcolor);
     font-weight: 500;
 }
 
@@ -76,7 +109,6 @@ body {
     cursor: pointer;
 }
 
-/* Manchetes */
 .manchetes {
     margin-top: 100px;
     padding: 2rem;
@@ -89,11 +121,10 @@ body {
 
 .manchete-coluna {
     padding: 1rem;
-    background-color: #f8f9fa;
+    background-color: var(--highlight-bg);
     border-radius: 5px;
 }
 
-/* Carrossel */
 .carrossel {
     margin: 2rem auto;
     max-width: 1200px;
@@ -115,7 +146,6 @@ body {
     object-fit: cover;
 }
 
-/* Cards de Notícias */
 .cards-noticias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,7 +156,7 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -142,10 +172,9 @@ body {
     padding: 1rem;
 }
 
-/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
     padding: 2rem;
     margin-top: 2rem;
     text-align: center;
@@ -169,7 +198,7 @@ footer {
 }
 
 .mapa-site a {
-    color: #fff;
+    color: var(--footer-color);
     text-decoration: none;
 }
 
@@ -180,7 +209,6 @@ footer {
     border-top: 1px solid #555;
 }
 
-/* Página Sobre */
 .sobre-conteudo {
     max-width: 800px;
     margin: 100px auto 0;
@@ -199,7 +227,6 @@ footer {
     margin-left: 2rem;
 }
 
-/* Página Contato */
 .contato-conteudo {
     max-width: 1200px;
     margin: 100px auto 0;
@@ -214,7 +241,7 @@ footer {
 }
 
 .informacoes-contato {
-    background-color: #f8f9fa;
+    background-color: var(--highlight-bg);
     padding: 2rem;
     border-radius: 5px;
 }
@@ -224,13 +251,13 @@ footer {
 }
 
 .redes-sociais a {
-    color: #333;
+    color: var(--fontcolor);
     font-size: 1.5rem;
     margin-right: 1rem;
 }
 
 .formulario-contato {
-    background-color: #fff;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -255,15 +282,14 @@ footer {
 }
 
 .btn-enviar {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-/* Página Trabalhe Conosco */
 .trabalhe-conosco-conteudo {
     max-width: 1200px;
     margin: 100px auto 0;
@@ -278,15 +304,15 @@ footer {
 }
 
 .vaga {
-    background-color: #f8f9fa;
+    background-color: var(--highlight-bg);
     padding: 1.5rem;
     margin-bottom: 1rem;
     border-radius: 5px;
 }
 
 .btn-candidatar {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
@@ -294,7 +320,6 @@ footer {
     margin-top: 1rem;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -306,7 +331,7 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #fff;
+        background-color: var(--card-bg);
         padding: 1rem;
         flex-direction: column;
         gap: 1rem;
@@ -329,31 +354,8 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
-
-.light-theme {
-    --bg: var(--white);
-    --fontcolor: var(--black);
-    --btnfontcolor: var(--white);
-    --btnbg: var(--black);
-  }
-  
-.dark-theme {
-    --bg: var(--black);
-    --fontcolor: var(--white);
-    --btnfontcolor: var(--black);
-    --btnbg: var(--white);
-  }  
-
-:root{
-    --bg: #ffffff;
-    --green:#00ff00;
-    --white: #ffffff;
-    --black: #000000;
 }
-* {
-    color: var(--fontcolor);
-    font-family: Helvetica;
-}
+
 .btn {
     color: var(--btnfontcolor);
     background-color: var(--btnbg);
@@ -364,5 +366,9 @@ footer {
     width: 50px;
     border-radius: 50%;
     border: none;
+    cursor: pointer;
 }
-.btn:focus { outline-style: none;}
+
+.btn:focus {
+    outline-style: none;
+}
