@@ -328,3 +328,43 @@ footer {
         gap: 1rem;
     }
 } 
+}
+.list {
+    list-style: square;
+}
+.light-theme {
+    --bg: var(--green);
+    --fontcolor: var(--black);
+    --btnfontcolor: var(--green);
+    --btnbg: var(--black);
+  }
+  
+.dark-theme {
+    --bg: var(--black);
+    --fontcolor: var(--green);
+    --btnfontcolor: var(--white);
+    --btnbg: var(--green);
+  }  
+
+:root{
+    --bg: #ffffff;
+    --green:#00ff00;
+    --white: #ffffff;
+    --black: #000000;
+}
+* {
+    color: var(--fontcolor);
+    font-family: Helvetica;
+}
+.btn {
+    color: var(--btnfontcolor);
+    background-color: var(--btnbg);
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+}
+.btn:focus { outline-style: none;}
