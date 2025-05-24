@@ -13,3 +13,15 @@ switcher.addEventListener('click', function() {
         this.textContent = "Light Mode";
     }
 });
+// Ao carregar a página
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.body.classList.add(savedTheme);
+}
+
+// Ao alternar o tema
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const currentTheme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+  localStorage.setItem('theme', currentTheme);
+});
