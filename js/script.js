@@ -1,17 +1,18 @@
-// Menu Mobile
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuItems = document.querySelector('.menu-items');
+document.addEventListener("DOMContentLoaded", () => {
+    // === Menu Mobile ===
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
 
-    menuToggle.addEventListener('click', function() {
-        menuItems.classList.toggle('active');
-    });
-});
+    if (menuToggle && menu) {
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("ativo"); // Usa a classe .ativo para exibir
+            console.log("Menu alternado");
+        });
+    }
 
-// Carrossel
-document.addEventListener('DOMContentLoaded', function() {
-    const carrossel = document.querySelector('.carrossel-container');
-    const items = document.querySelectorAll('.carrossel-item');
+    // === Carrossel ===
+    const carrossel = document.querySelector(".carrossel-container");
+    const items = document.querySelectorAll(".carrossel-item");
     let currentIndex = 0;
 
     function nextSlide() {
@@ -24,35 +25,25 @@ document.addEventListener('DOMContentLoaded', function() {
         carrossel.style.transform = `translateX(${offset}%)`;
     }
 
-    // Avança o carrossel automaticamente a cada 5 segundos
-    setInterval(nextSlide, 5000);
-});
+    if (carrossel && items.length > 0) {
+        setInterval(nextSlide, 5000);
+    }
 
-// Formulários
-document.addEventListener('DOMContentLoaded', function() {
-    const forms = document.querySelectorAll('form');
-    
+    // === Envio de Formulários ===
+    const forms = document.querySelectorAll("form");
+
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener("submit", e => {
             e.preventDefault();
-            
-            // Aqui você pode adicionar a lógica para enviar os dados do formulário
-            alert('Formulário enviado com sucesso!');
+            alert("Formulário enviado com sucesso!");
             form.reset();
         });
     });
-});
 
-// Botões de Candidatura
-document.addEventListener('DOMContentLoaded', function() {
-    const botoesCandidatar = document.querySelectorAll('.btn-candidatar');
-    
+    // === Botões de Candidatura ===
+    const botoesCandidatar = document.querySelectorAll(".btn-candidatar");
+
     botoesCandidatar.forEach(botao => {
-        botao.addEventListener('click', function() {
-            const formulario = document.querySelector('.formulario-candidatura');
+        botao.addEventListener("click", () => {
+            const formulario = document.querySelector(".formulario-candidatura");
             if (formulario) {
-                formulario.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-}); 
