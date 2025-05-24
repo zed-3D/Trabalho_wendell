@@ -2,26 +2,26 @@
 
 const switcher = document.querySelector('.btn');
 
-switcher.addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
-
-    let className = document.body.className;
-    if (className.includes('light-theme')) {
-        this.textContent = "Dark Mode";
-    } else {
-        this.textContent = "Light Mode";
-    }
-});
-// Ao carregar a página
+// Ao carregar a página, aplica o tema salvo
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   document.body.classList.add(savedTheme);
+  switcher.textContent = savedTheme === 'dark-theme' ? 'Light Mode' : 'Dark Mode';
+} else {
+  // Se não houver tema salvo, aplica o tema claro como padrão
+  document.body.classList.add('light-theme');
+  switcher.textContent = 'Dark Mode';
 }
 
-// Ao alternar o tema
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const currentTheme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-  localStorage.setItem('theme', currentTheme);
+// Alternar tema ao clicar
+switcher.addEventListener('click', function () {
+  const isDark = document.body.classList.contains('dark-theme');
+
+  document.body.classList.toggle('dark-theme', !isDark);
+  document.body.classList.toggle('light-theme', isDark);
+
+  const newTheme = isDark ? 'light-theme' : 'dark-theme';
+  localStorage.setItem('theme', newTheme);
+
+  this.textContent = isDark ? 'Dark Mode' : 'Light Mode';
 });
