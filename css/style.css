@@ -444,4 +444,7 @@ footer {
 body, .navbar, .menu, .cards-noticias, .manchetes, footer, .card, .btn {
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
+.carrossel-container {
+    width: calc(100% * var(--total-slides, 3));
+}
 
