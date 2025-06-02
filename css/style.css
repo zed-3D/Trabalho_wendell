@@ -41,12 +41,28 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
     color: var(--fontcolor);
     background-color: var(--bg);
     transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--fontcolor);
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
 
 .navbar {
     background-color: var(--card-bg);
@@ -121,9 +137,11 @@ body {
 }
 
 .manchete-coluna {
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: var(--highlight-bg);
     border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .carrossel {
@@ -161,6 +179,12 @@ body {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .card img {
@@ -169,8 +193,17 @@ body {
     object-fit: cover;
 }
 
-.card h3, .card p {
+.card h3 {
     padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.card p {
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
 }
 
 footer {
@@ -179,6 +212,9 @@ footer {
     padding: 2rem;
     margin-top: 2rem;
     text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
 }
 
 .mapa-site {
@@ -280,6 +316,7 @@ footer {
     padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
 .btn-enviar {
@@ -333,13 +370,22 @@ footer {
         left: 0;
         width: 100%;
         background-color: var(--card-bg);
-        padding: 1rem;
+        padding: 1.5rem;
         flex-direction: column;
         gap: 1rem;
+        font-size: 1.1rem;
     }
 
     .menu-items.active {
         display: flex;
+    }
+
+    .manchetes,
+    .cards-noticias,
+    .contato-conteudo,
+    .trabalhe-conosco-conteudo,
+    .sobre-conteudo {
+        padding: 1.5rem 1rem;
     }
 
     .manchetes {
@@ -354,6 +400,20 @@ footer {
     .mapa-site ul {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .card h3,
+    .card p {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .jornal-nome {
+        font-size: 1.2rem;
     }
 }
 
