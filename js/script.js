@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // === Menu Mobile ===
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
 
@@ -9,8 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Menu alternado");
         });
     }
-
-    // === Carrossel ===
     const carrossel = document.querySelector(".carrossel-container");
     const items = document.querySelectorAll(".carrossel-item");
     let currentIndex = 0;
@@ -28,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (carrossel && items.length > 0) {
         setInterval(nextSlide, 5000);
     }
-
-    // === Envio de Formulários ===
     const forms = document.querySelectorAll("form");
 
     forms.forEach(form => {
@@ -39,8 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
             form.reset();
         });
     });
-
-    // === Botões de Candidatura ===
     const botoesCandidatar = document.querySelectorAll(".btn-candidatar");
 
     botoesCandidatar.forEach(botao => {
