@@ -4,10 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (menuToggle && menu) {
         menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("ativo"); // Usa a classe .ativo para exibir
+            menu.classList.toggle("ativo");
             console.log("Menu alternado");
         });
     }
+
     const carrossel = document.querySelector(".carrossel-container");
     const items = document.querySelectorAll(".carrossel-item");
     let currentIndex = 0;
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (carrossel && items.length > 0) {
         setInterval(nextSlide, 5000);
     }
+
     const forms = document.querySelectorAll("form");
 
     forms.forEach(form => {
@@ -34,9 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
             form.reset();
         });
     });
+
     const botoesCandidatar = document.querySelectorAll(".btn-candidatar");
 
     botoesCandidatar.forEach(botao => {
         botao.addEventListener("click", () => {
             const formulario = document.querySelector(".formulario-candidatura");
             if (formulario) {
+                formulario.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});
+
